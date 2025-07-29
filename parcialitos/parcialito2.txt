@@ -1,0 +1,520 @@
+1 . Suponiendo que la clase Docente hereda de la clase Personal, ¿el compilador de Java permite que a una variable declarada del tipo Personal le asigne una instancia de la clase Docente?
+
+    a.
+    Si, siempre (x)
+
+    b.
+    Depende
+
+    c.
+    No, nunca
+
+
+2 . Si una clase no hereda explícitamente de ninguna otra, invocar super() en la primer linea de su constructor da error de compilación
+
+    Seleccione una:
+    Verdadero
+    Falso (x)
+
+
+3 . ¿Gracias a que concepto visto (además de herencia) este código funciona para la Clase X y cualquier clase que herede de X?
+
+        public void imprimir(X dato){
+            System.out.println(dato);
+        }
+
+    a.
+    A que Java tiene tipado estático
+
+    b.
+    Polimorfismo (x)
+
+    c.
+    Ese código solo funciona para la clase X
+
+    d.
+    static
+
+    e.
+    Binding dinámico (x)
+
+    f.
+    Ese código no funciona
+
+
+
+4 . ¿Qué significa sobreescribir un método?
+
+    a.
+    Editarlo en la misma clase para modificar su comportamiento
+
+    b.
+    Cambiarle el nombre dejándolo con la misma funcionalidad
+
+    c.
+    Crear un método en una subclase con la misma signatura que en la clase superior (x)
+
+    d.
+    Crear un método con el mismo nombre pero diferentes argumentos
+
+
+5 . Dadas las siguientes clases
+
+        public class Persona {
+            private String nombre;
+
+            public Persona(String nombre) {
+                this.nombre = nombre;
+            }
+
+            public String toString() {
+                return "Nombre: "+nombre;
+            }
+
+        }
+
+        public class Empleado extends Persona{
+            private int legajo;
+
+            public Empleado(String nombre, int legajo) {
+                super(nombre);
+                this.legajo = legajo;
+            }
+
+            public String toString(String empresa) {
+                return super.toString() + " legajo: "+
+                        legajo + " empresa: "+empresa;
+            }
+
+        }
+
+    Cuál es el resultado de la ejecución del siguiente método main
+
+        public static void main(String[] args) {
+
+            Empleado emp1 = new Empleado("Carmelo Garcia", 1234);
+            System.out.println(emp1);
+
+        }
+
+    a.
+    Nombre: Carmelo Garcia legajo: 23457 empresa: null
+
+    b.
+    Nombre: Carmelo Garcia (x)
+
+    c.
+    Nombre: Carmelo Garcia legajo: 23457 empresa:
+
+    d.
+    Alumno@12cf34523
+
+
+6 . ¿Cuál de las siguientes frases es verdadera para una clase X?
+
+    a.
+    Las variables, métodos y constructores que son declarados privados en X pueden ser solo accedidos desde X. (x)
+
+    b.
+    Las variables, métodos y constructores que son declarados privados en X pueden ser accedidos desde X y desde cualquiera de sus subclases.
+
+    c.
+    Las variables, métodos y constructores que son declarados públicos en X pueden ser accedidos desde cualquier clase. (x)
+
+
+7 . Si invoco super(...) en el constructor de una clase, debo hacerlo indefectiblemente en la última línea del código del mismo
+
+    Seleccione una:
+    Verdadero
+    Falso 
+
+
+8 . ¿Cuál es el resultado del invocar el siguiente método en java con el parámetro "Luis"
+
+        public String getMensajeOptimista(String nombre){
+
+            return nombre+ " va a promocionar programación 2";
+
+            System.out.println(nombre);
+
+        }
+
+    a.
+    Error en tiempo de ejecución
+
+
+    b.
+    El código ejecuta, pero no hay salida por consola
+
+
+    c.
+    Imprime por consola "Luis va a promocionar Programación 2"
+
+
+    d.
+    Error de compilación
+
+
+9 . Es posible invocar super()  desde cualquier método de la clase
+
+    Seleccione una:
+    Verdadero
+    Falso 
+
+
+10 . Dado el siguiente código, responda a las preguntas que se enuncian a continuación
+
+        public class X {
+
+            public int x1(){
+                return 10;
+            }
+
+            public int x2(){
+                return 20;
+            }
+
+            public int x3(){
+                return this.x1()+this.x2();
+            }
+
+        }
+
+        public class Y extends X{
+
+            public int x2(){
+                return 200;
+            }
+
+            public int x4(){
+                return 10;
+            }
+
+        }
+
+    a. ¿Qué imprime el siguiente código?
+
+    X aux = new Y();
+    System.out.println(aux.x1());
+    Respuesta : 10
+    
+    b. ¿Qué imprime el siguiente código?
+
+    Y aux = new X();
+    System.out.println(aux.x1());
+    Respuesta : No compila
+    
+    c. ¿Qué imprime el siguiente código?
+
+    Y aux = new Y();
+    System.out.println(aux.x3());
+    Respuesta : 210
+    
+    d. ¿Qué imprime el siguiente código?
+
+    Y aux = new Y();
+    System.out.println(aux.x4());
+    Respuesta: 10
+    
+    e. ¿Qué imprime el siguiente código?
+
+    X aux = new X();
+    System.out.println(aux.x3());
+    Respuesta: 30
+    
+    f. ¿Qué imprime el siguiente código?
+
+    Y aux = new X();
+    System.out.println(aux.x4());
+    Respuesta: No compila
+    
+    g. ¿Qué imprime el siguiente código?
+
+    X aux = new Y();
+    System.out.println(aux.x3());
+    Respuesta: 210
+    
+    h. ¿Qué imprime el siguiente código?
+
+    X aux = new Y();
+    System.out.println(aux.x4());
+    Respuesta: No compila
+
+
+11 . Enunciado de la pregunta
+
+    En base al siguiente enunciado responda: 
+
+    En una empresa se desea crear un sistema para organizar a sus empleados y clientes.
+
+    De los empleados se almacena su nombre, apellido, dni, un número de empleado y el sueldo mensual. Sin embargo algunos empleados cobran, además de su sueldo mensual, una comisión del 10% extra por cada venta. Para estos empleados se debe registrar la cantidad de ventas para poder hacer el cálculo de su sueldo total.
+
+    Por otra parte, de cada cliente se guarda su nombre, apellido, dni y el monto total de todas las compras realizadas por el cliente en el mes, con el objetivo de premiar a sus clientes frecuentes con un descuento en sus compras. Para saber si un cliente es frecuente, el monto total de compras del mes debe superar, actualmente, los $5000.
+
+    Los servicios que debe proveer el sistema son, básicamente, conocer el sueldo que debe pagarse a cada empleado y determinar si un cliente es frecuente o no.
+
+    a. Se debe crear la clase EmpleadoConComision
+    Verdadero
+    
+    b. Empleado es una clase hija de EmpleadoConComision
+    Falso
+    
+    c. EmpleadoConComision no debe existir como clase, es una instancia de la clase Empleado
+    Falso
+    
+    d. Cliente no hereda de ninguna clase
+    Falso
+    
+    e. La clase Cliente no existe
+    Falso
+    
+    f. Cliente hereda de empleado
+    Falso
+    
+    g. EmpleadoConComision es una clase hija de Empleado
+    Verdadero
+    
+    h. Cliente hereda de Persona
+    Verdadero
+
+    i. Se debe crear una clase Persona
+    Verdadero
+
+
+12 . En base al siguiente código responda: 
+
+        public class Persona {
+
+            private String nombre;
+            private String apellido;
+            private String dni;
+
+            public Persona(String nombre, String apellido, String dni) {
+                this.nombre = nombre;
+                this.apellido = apellido;
+                this.dni = dni;
+            }
+
+            public String getNombre() {
+                return nombre;
+            }
+
+            public void setNombre(String nombre) {
+                this.nombre = nombre;
+            }
+
+            public String getApellido() {
+                return apellido;
+            }
+
+            public void setApellido(String apellido) {
+                this.apellido = apellido;
+            }
+
+            public String getDni() {
+                return dni;
+            }
+        }
+
+        public class Empleado extends Persona{
+            private int numero;
+            private double sueldo;
+            public Empleado(String nombre, String apellido, String dni, int numero, double sueldo) {
+                super(nombre, apellido, dni);
+                this.numero = numero;
+                this.sueldo = sueldo;
+            }
+
+            public int getNumero() {
+                return numero;
+            }
+            public void setNumero(int numero) {
+                this.numero = numero;
+            }
+            public double getSueldo() {
+                return sueldo;
+            }
+            public void setSueldo(double sueldo) {
+                this.sueldo = sueldo;
+            }
+
+        }
+
+        public class EmpleadoComision extends Empleado{
+            private int cantVentas;
+            private double comisionPorVenta;
+            public EmpleadoComision(String nombre, String apellido, String dni, int numero, double sueldo, double comision) {
+                super(nombre, apellido, dni, numero, sueldo);
+                this.comisionPorVenta = comision;
+                this.cantVentas = 0;
+            }
+
+            public int getCantVentas() {
+                return cantVentas;
+            }
+            public void addVenta() {
+                this.addVentas(1);
+            }
+
+            public void addVentas(int cantVentas) {
+                this.cantVentas += cantVentas;
+            }
+
+            public double getSueldo() {
+                //suponer implementación correcta (pregunta 4)
+            }
+
+        }
+
+        public class Cliente extends Persona{
+
+            private double compras;
+            public Cliente(String nombre, String apellido, String dni) {
+                super(nombre, apellido, dni);
+            }
+            public double getCompras() {
+                return compras;
+            }
+            public void addCompra(double compra) {
+                this.compras += compra;
+            }
+
+            public boolean recibeDescuento() {
+                return this.getCompras() >= 5000;
+            }
+        }
+
+
+    1) Se puede ejecutar el siguiente main:
+    public static void main (String[] args) {
+        Persona persona = new Persona("José", "Hernandez", "12345678");
+        persona.getSueldo();
+    }
+
+    Si
+    No (x)
+
+    2) En el caso del empleado con comisión, si el valor de la comisión puede ser diferente para cada empleado
+
+    Respuesta
+    Está bien que sea un atributo
+
+    3) ¿Cómo implementaría el método getSueldo() en la Clase EmpleadoConComision? 
+
+    Respuesta
+    return super.getSueldo() + (this.getComisionPorVenta()*this.getCantVentas());
+
+
+13 . Cuando ejecuto la siguiente línea: 
+
+        Producto leche = new Producto("Leche", "Sancor", 110);
+
+    a.
+    Estoy indicando que la Leche es un Producto mediante el mecanismo de herencia
+
+    b.
+    Estoy instanciando un objeto de la clase Producto, referenciado por una variable llamada leche (x)
+
+    c.
+    Ninguna opción es correcta
+
+    d.
+    Estoy haciendo binding dinámico entre la variable llamada leche y una clase Producto
+
+14 . ¿Cuál de los siguientes es el valor por defecto de una variable local en JAVA (si no se inicializa)?
+
+    a.
+    0
+
+    b.
+    No se les asigna un valor por defecto (x)
+
+    c.
+    Depende del tipo de variable
+
+    d.
+    null
+
+
+15 . Dado el siguiente código
+
+        public class Dado {
+            private int nroCaras;
+
+            public Dado(int nroCaras) {
+                this.nroCaras = nroCaras;
+            }
+
+            public int tirar(){
+                return  (int)(1+Math.random()*nroCaras);
+            }
+
+            public int getNroCaras() {
+                return nroCaras;
+            }
+
+            public void setNroCaras(int nroCaras) {
+                this.nroCaras = nroCaras;
+            }
+        }
+
+        public class DadoCargado extends Dado{
+            public static final int VAL_MIN = 3;
+
+            public DadoCargado(int nroCaras) {
+                super(nroCaras);
+            }
+
+            public int tirar(){
+                int valor = super.tirar();
+                if (valor<VAL_MIN) return valor;
+                else return super.getNroCaras();
+            }
+
+            public static void main(String[] args) {
+                DadoCargado dc= new DadoCargado(6);
+                for (int i = 0; i < 20; i++) {
+                    System.out.println(dc.tirar());
+                }
+            }
+        }
+
+
+    a.
+    Compila pero se cuelga en tiempo de ejecución
+
+    b.
+    No compila
+
+    c.
+    No tiene ningún error
+
+    d.
+    Compila pero da error en tiempo de ejecución
+
+    e.
+    Compila pero tiene un error conceptual (x)
+
+
+16 . Si la clase Persona tiene un atributo de instancia que se llama dni y la clase Cliente hereda de la clase Persona. Marcar los casos en los cuales la clase Cliente tendría acceso a la variable dni
+
+    NOTA: Más de una opción puede ser correcta
+
+    a.
+    si se declara protected al atributo dni (x)
+
+
+    b.
+    Si se declara public static al atributo dni (x)
+
+
+    c.
+    si se declara private static al atributo dni
+
+
+    d.
+    Si se declara private al atributo dni
+
+
+    e.
+    Si se declara public al atributo dni (x)

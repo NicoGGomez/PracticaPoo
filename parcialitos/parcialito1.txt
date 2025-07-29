@@ -1,0 +1,265 @@
+2 . ¿Qué es la máquina virtual de JAVA?
+
+    a.
+    Un lenguaje de programación utilizado para crear objetos
+
+    b.
+    Un conjunto de instrucciones de bajo nivel ejecutables por la máquina real
+
+    c.
+    Un software que emula un entorno de ejecución de código (x)
+
+
+3 . ¿Qué es el bytecode de JAVA?
+
+    a.
+    El código nativo de un sistema java para una arquitectura de hardware particular
+
+    b.
+    El código intermedio que se obtiene al compilar el código fuente de un sistema en java (x)
+
+    c.
+    El código fuente de un sistema en java
+
+
+4 . El operador = en Java :
+    Es un operador de asignación de valores a variables
+
+
+5 . El encapsulamiento se refiere principalmente a :
+    Proteger el acceso a los atributos de un objeto
+ 
+ 
+6 . ¿Qué significa instanciar una clase? 
+
+    (Puede ser mas de una opción)
+
+    a.
+    Definir el constructor de una clase
+
+    b.
+    Duplicar una clase
+
+    c.
+    Conectar dos clases entre si
+
+    d.
+    Crear un objeto a partir de una clase (x)
+
+    e.
+    Eliminar una clase
+
+
+7 . El siguiente código 
+
+        public class Mascota {
+            private String nombre;
+            private String raza;
+            private String duenio;
+
+            public Mascota(String nombre, String raza, String duenio) {
+                this.nombre = nombre;
+                this.raza = raza;
+                this.duenio = duenio;
+            }
+
+            public Mascota(String nombre, String raza) {
+                this(nombre, raza, "NN");
+            }
+
+            public Mascota(String nombre, String dueño) {
+                this(nombre, "desconocida", dueño);
+            }
+            //continúa con los métodos de la clase
+
+        }
+
+    a. Da error en tiempo de compilación (x)
+
+    b. Da error en tiempo de ejecución
+
+    c. Muestra una clase con tres constructores perfectamente válidos
+
+    d. No es válido porque hay más de un constructor para la clase
+
+
+8 . Si defino un atributo en una clase (siguiendo los principios de la Programación Orientada a Objetos) entonces estoy definiendo...
+
+    (más de una opción puede ser correcta)
+
+    a.
+    una variable que se puede conocer en todos los métodos de esta clase (x)
+
+    b.
+    una variable global al sistema
+
+    c.
+    una variable que solo es conocida dentro de los métodos públicos de esta clase
+
+    d.
+    una variable que solo es conocida dentro de los métodos privados de esta clase
+
+    e.
+    una variable que se puede acceder desde cualquier clase
+
+    f.
+    una variable de instancia (x)
+
+
+9 . Dadas las siguientes sentencias:
+
+    Persona p1 = new Persona();
+    Persona p2;
+    Persona p3 = new Persona();
+    Persona p4 = p1;
+
+
+    ¿Cuántos objetos se instanciaron?
+
+    Respuesta: 2
+
+
+10 . No pueden existir métodos privados en una clase, porque no podrían invocarse nunca
+
+    Seleccione una:
+    Verdadero
+    Falso (x)
+
+
+11 . En una clase se pueden declarar otros objetos como atributos, además también se pueden declarar atributos de tipos primitivos y arreglos.
+
+    Seleccione una:
+    Verdadero (x) 
+    Falso
+
+
+12 . Todas las instancias creadas a partir de una misma clase tienen idéntico estado
+
+    Seleccione una:
+    Verdadero
+    Falso (x)
+
+
+13 . ¿Es posible definir métodos de  distinta signatura en la misma clase?
+
+    a.
+    Si (x)
+
+    b.
+    ¿Qué es la signatura?
+
+    c.
+    No
+    
+
+14 . ¿Qué se logra con el encapsulamiento?
+
+    a.
+    Una mayor seguridad de los datos y una mejor modularidad del código. (x)
+
+    b.
+    Una mayor reutilización de código.
+
+    c.
+    Una mayor velocidad en la ejecucion del código
+
+
+15 . Dado el siguiente código, ¿qué se imprimirá por consola?
+
+        import java.time.LocalDate;
+
+        public class Vehiculo {
+            private String patente;
+            private String marca;
+            private int kilometros;
+            private LocalDate fechaPatentamiento;
+
+            public Vehiculo(String patente, String marca, int kilometros) {
+                this.patente = patente;
+                this.marca = marca;
+                this.kilometros = kilometros;
+            }
+
+            public Vehiculo(String kilometros, String marca) {
+                this(kilometros, marca, 0);
+            }
+
+            public String getInformacion(){
+                return "Patente: " + this.patente +
+                    " - Marca: " + this.marca +
+                    " - Kilometros: " + this.kilometros +
+                    " - Fecha patentamiento: " + this.fechaPatentamiento;
+            }
+
+            public static void main(String[] args) {
+                Vehiculo golcito = new Vehiculo("12ABC09", "Gol");
+                System.out.println(golcito.getInformacion());
+            }
+        }
+
+    a.
+    Patente: 12ABC09 - Marca: Gol - Kilometros: null - Fecha patentamiento: null
+
+    b.
+    Patente: 12ABC09 - Marca: Gol - Kilometros: 0 - Fecha patentamiento:
+
+    c.
+    Patente: 12ABC09 - Marca: Gol - Kilometros: 0 - Fecha patentamiento: null (x)
+
+    d.
+    Patente: 12ABC09 - Marca: Gol - Kilometros: - Fecha patentamiento:
+
+
+16 . Los métodos de un objeto no deberían acceder directamente a los atributos de otros objetos.
+
+    Seleccione una:
+    Verdadero (x) 
+    Falso 
+
+
+17 . Un _________ es una señal que recibe un objeto para ejecutar un ________ determinado
+     Un (mensaje) es una señal que recibe un objeto para ejecutar un (método) determinado   
+
+
+18 . ¿Cuál de los siguientes constructores para una hipotética clase Vehiculo es incorrecto o daría error en Java? (considere el orden de las opciones como el orden en el que son declarados) Pueden ser más de una opción.
+
+
+    a.
+    public Vehiculo()
+
+    b.
+    public void Vehiculo() (x)
+
+    c.
+    public Vehiculo(String patente, String marca)
+
+    d.
+    public Vehiculo(String patente, String marca, int kilometros)
+
+    e.
+    public Vehiculo(String patente, String marca, int modelo) (x)
+
+    f.
+    public Vehiculo(String patente, int modelo)
+
+    g.
+    public Vehiculos(int kilometros) (x)
+
+
+19 . Todos los objetos creados a partir de una clase responden a los mismos mensajes
+
+    Seleccione una:
+    Verdadero (x) 
+    Falso
+
+
+20 . ¿Qué se logra con la delegación de responsabilidades?
+
+    a.
+    Una mayor seguridad de los datos y una mejor modularidad del código.
+
+    b.
+    Una mayor reutilización de atributos.
+
+    c.
+    Una mejor distribución de responsabilidades y una mayor flexibilidad en el diseño. (x)
