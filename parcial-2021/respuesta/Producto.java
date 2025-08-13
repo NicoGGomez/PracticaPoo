@@ -15,15 +15,20 @@ public class Producto extends ElementoVenta {
     // funciones abstraidas
 
     @Override
+    public int cantProductos() {
+        return 1;
+    }
+
+    @Override
     public double getVolumen() {
         return volumen;
     }
-
-    // funciones basicas
-
+    
     public int getPrecio() {
         return precio;
     }
+
+    // funciones basicas
 
     public void setPrecio(int precio) {
         this.precio = precio;

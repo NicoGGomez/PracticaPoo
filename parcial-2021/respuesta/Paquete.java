@@ -7,11 +7,20 @@ public class Paquete extends ElementoVenta {
     private double volumen;
     ArrayList<ElementoVenta> productos;
 
-    public Paquete(String n, String m, int p, double v){
+    public Paquete(String n, String m){
         super(n,m);
-        this.precio = p;
-        this.volumen = v;
         productos = new ArrayList<>();
+    }
+
+    // metodos abstraidos
+
+    @Override
+    public int cantProductos() {
+        int cantidad = 0;
+        for(ElementoVenta p: productos){
+            cantidad += p.cantProductos();
+        }
+        return cantidad;
     }
 
     @Override
@@ -27,12 +36,18 @@ public class Paquete extends ElementoVenta {
         return max;
     }
 
-    public void agregarProducto(ElementoVenta p){
-        productos.add(p);
+    public int getPrecio() {
+        int precioTotal = 0;
+        for(ElementoVenta p: productos){
+            precioTotal += p.getPrecio();
+        }
+        return precioTotal;
     }
 
-    public int getPrecio() {
-        return precio;
+    // metodos de clase
+
+    public void agregarProducto(ElementoVenta p){
+        productos.add(p);
     }
 
     public void setPrecio(int precio) {

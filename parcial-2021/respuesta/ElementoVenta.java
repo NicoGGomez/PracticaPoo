@@ -18,6 +18,10 @@ public abstract class ElementoVenta {
 
     public abstract double getVolumen();
 
+    public abstract int getPrecio();
+
+    public abstract int cantProductos();
+
     // funciones basicas (get & set)
 
     public String getMarca() {
