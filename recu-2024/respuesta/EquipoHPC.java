@@ -1,27 +1,26 @@
+package respuesta2;
+
 public class EquipoHPC extends Equipo {
 
-    @Override
-    protected Equipo getCascaron() {
-        return new EquipoHPC();
-    }
-
-    @Override
-    double getCrea() {
-        double creaMax = 0;
-        for(ElemPitufo m: miembros){
-            if (m.getCrea() > creaMax) {
-                creaMax =  m.getCrea();
+        @Override
+    int getCreatividad() {
+        int max = 0;
+        for(PitufiElem p: pitufos){
+            if (p.getCreatividad() > max) {
+                max = p.getCreatividad();
             }
         }
-        return creaMax;
+        return max;
     }
 
     @Override
-    double getVel() {
-        double vel = 0;
-            if(miembros.size() > 0)
-            vel = miembros.get(miembros.size()-1).getVel();
-        return vel;
+    int getVelTrab() {
+        int retorno = pitufos.get(pitufos.size()-1).getCreatividad();
+        return retorno;
     }
 
+    @Override
+    Equipo getCascaron() {
+        return new EquipoHPC();
+    }
 }

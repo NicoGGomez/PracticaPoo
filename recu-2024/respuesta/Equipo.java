@@ -1,21 +1,24 @@
+package respuesta2;
+
 import java.util.ArrayList;
 
-public abstract class Equipo extends ElemPitufo {
-    protected ArrayList<ElemPitufo> miembros;
+public abstract class Equipo extends PitufiElem {
+    protected ArrayList<PitufiElem> pitufos;
 
     public Equipo(){
-        miembros = new ArrayList<>();
+        pitufos = new ArrayList<>();
     }
 
-    // funciones abstraidas
+    public void addPitufo(PitufiElem p){
+        pitufos.add(p);
+    }
 
     @Override
-    ArrayList<String> getHabs() {
+    ArrayList<String> getHabilidades() {
         ArrayList<String> retorno = new ArrayList<>();
-        for(ElemPitufo m: miembros){
-            ArrayList<String> temp = new ArrayList<>();
-            temp = m.getHabs();
-            for (String h : temp) {
+        for(PitufiElem p : pitufos){
+            ArrayList<String> aux =  p.getHabilidades();
+            for(String h : aux){
                 if (!retorno.contains(h)) {
                     retorno.add(h);
                 }
@@ -25,37 +28,23 @@ public abstract class Equipo extends ElemPitufo {
     }
 
     @Override
-    int getCantPitufos(Condicion c) {
-        int cant = 0;
-        for(ElemPitufo m: miembros){
-            cant = m.getCantPitufos(c);
+    int cantidadPitufos(Condicion c) {
+        int total = 0;
+        for(PitufiElem p: pitufos){
+            total += p.cantidadPitufos(c);
         }
-        return cant;
+        return total;
     }
 
     @Override
-    ElemPitufo getCopia() {
+    PitufiElem copia() {
         Equipo copia = getCascaron();
-        for (ElemPitufo m : miembros) {
-            copia.agregarMiembro(m.getCopia());
+        for(PitufiElem p: pitufos){
+            copia.addPitufo(p.copia());
         }
         return copia;
     }
 
-    // funciones de clase
-
-    protected abstract Equipo getCascaron();
-
-    public void agregarMiembro(ElemPitufo m){
-        miembros.add(m);
-    }
-
-    public ArrayList<ElemPitufo> getMiembros(){
-        ArrayList<ElemPitufo> retorno = new ArrayList<>();
-        for(ElemPitufo p: miembros){
-            retorno.add(p);
-        }
-        return retorno;
-    }
-
+    abstract Equipo getCascaron();
+    
 }
